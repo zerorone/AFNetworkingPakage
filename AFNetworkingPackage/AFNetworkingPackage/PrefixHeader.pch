@@ -1,0 +1,31 @@
+//
+//  PrefixHeader.pch
+//  美团
+//
+//  Created by 晓 &zerone on 16/5/4.
+//  Copyright © 2016年 xiao. All rights reserved.
+//
+
+#ifdef __OBJC__
+/** 分类*/
+
+
+/** 第三方库*/
+
+
+/** 公用类 */
+
+#endif
+
+
+/** NSLog 输出宏*/
+#ifdef DEBUG
+#define NSLog(FORMAT, ...) fprintf(stderr,"%s:%d\t%s\n",[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
+#else
+#define NSLog(...)
+#endif
+
+/** 设置颜色的宏*/
+#define XZColor(r,g,b) [UIColor colorWithRed:(r) / 255.0 green:(g) / 255.0 blue:(b) / 255.0 alpha:1.0]
+#define XZNotification [NSNotificationCenter defaultCenter]
+
